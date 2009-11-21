@@ -14,6 +14,7 @@ public abstract class AbstractIntegrationTest {
 	public CheckManualRunPropertyRule checkManulRunProperty = new CheckManualRunPropertyRule();
 
     private String currentTestName;
+    private static final int USERFEEDBACK_TIMEOUT_SECONDS = 60;
 
     protected void assertManualTestPassed() {
         Callable askIfTestPassedCallable= new AskIfTestPassedCallable();
@@ -36,7 +37,7 @@ public abstract class AbstractIntegrationTest {
     private String executeAsynchronous(Callable callable,final String defaultValue) {
         Future<String> future= Executors.newSingleThreadExecutor().submit(callable);
         try {
-            return future.get(10, TimeUnit.SECONDS);
+            return future.get(USERFEEDBACK_TIMEOUT_SECONDS, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
            throw new RuntimeException("Getting user input failed: ",e);
         } catch (ExecutionException e) {
