@@ -7,8 +7,8 @@
   <name>junit</name>
   <url>http://maven.apache.org</url>
     <scm>
-        <connection>scm:git:git://git@github.com:behrica/JIntegration.git</connection>
-        <developerConnection>scm:git:git://git@github.com:behrica/JIntegration.git</developerConnection>
+        <connection>scm:git:git://github.com/behrica/JIntegration.git</connection>
+        <developerConnection>scm:git:git://github.com/behrica/JIntegration.git</developerConnection>
         </scm>
   <dependencies>
     <dependency>
